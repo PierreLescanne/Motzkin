@@ -1,7 +1,6 @@
 module Motzkin where
 
 import Data.Vector (Vector,(!),(//),toList,take,replicate)
-import Control.Monad.State
 import System.Random
 
 -- ==============================
@@ -40,7 +39,7 @@ rMt _ 0 = initialVector // [(0,1),(1,0),(2,2)]
 rMt _ 1 = initialVector // [(0,1),(1,3),(2,0),(3,2),(4,4)]
 rMt rands n =  -- (rands!!n) a Float between 0 and 1
  let floatToInteger x n = floor (x * (fromIntegral n))
-     r = floatToInteger (rands!!(2*n)) ((fromIntegral (n+2))*(motzkin!!n))
+     r = floatToInteger (rands!!(3*n)) ((fromIntegral (n+2))*(motzkin!!n))
  in case r <= (fromIntegral (2*n+1)) * (motzkin !! (n-1)) of
              True -> case1 rands n
              False -> case2 rands n
@@ -54,7 +53,7 @@ case1 ::[Float] -> Int -> Vector Int
 case1 _ 0 = initialVector
 case1 _ 1 = initialVector -- 0, 1 are never invoqued and are irrelevant
 case1 rands n =
-  let k = floor ((rands!!(2*n+1)) * (fromIntegral (2*n)))
+  let k = floor ((rands!!(3*n+1)) * (fromIntegral (2*n)))
       v = rMt rands (n-1)
   in case odd k || odd (v!k) || odd (v!(k-1)) of
         True -> v // [(k,2*n+1),(2*n+1,v!k),(2*n+2,2*n+2)]
@@ -64,7 +63,7 @@ case2 :: [Float] -> Int -> Vector Int
 case2 _ 0 = initialVector
 case2 _ 1 = initialVector  -- 0, 1 are never invoqued and are irrelevant
 case2 rands n =
-  let r = floor ((rands!!(2*n+2)) * (fromIntegral (3*n-6)))
+  let r = floor ((rands!!(3*n+2)) * (fromIntegral (3*n-6)))
       k = r `div` 3
       c = r `rem` 3
       v = rMt rands (n-2)
