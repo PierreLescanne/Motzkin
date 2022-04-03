@@ -6,18 +6,26 @@ import System.Random
 -- ==============================
 -- Generating Motzkin trees
 -- ==============================
+-- This assocaited with a paper
+{--
+Linear random generation of Motzkin trees
+Pierre Lescanne
+École Normale Supérieure de Lyon,
+LIP (UMR 5668 CNRS ENS Lyon UCBL)
+--}
+
 --  == Constants ==
--- The size of the vector used to generate binary trees (for my poor computer).
--- This may be increased for other configurations.
--- This limits to Motzkin trees of size 499.  But on other configurations one may go much further. 
+-- The size of the vector used to generate binary trees
+-- Wanrnig the size of the vector should be at least 2n+3 when n is the siez of the Motzkin tree!
 sizeOfVector :: Int
-sizeOfVector = 1000002
+sizeOfVector = 100000
 
 -- The initial vector
 initialVector :: Vector Int
 initialVector = Data.Vector.replicate sizeOfVector (-1)
 
--- The limit from which one changes form raw calculation to approximations
+-- The limit from which one changes from raw calculation to approximations
+-- See § "Efficient choice between case1 and case2" in the paper
 tooBig = 600
 
 -- == Motzkin numbers ==
