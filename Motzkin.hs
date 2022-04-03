@@ -16,7 +16,7 @@ LIP (UMR 5668 CNRS ENS Lyon UCBL)
 
 --  == Constants ==
 -- The size of the vector used to generate binary trees
--- Wanrnig the size of the vector should be at least 2n+3 when n is the siez of the Motzkin tree!
+-- Warnnig the size of the vector should be at least 2n+3 where n is the size of the Motzkin tree!
 sizeOfVector :: Int
 sizeOfVector = 100000
 
@@ -144,6 +144,10 @@ testO d nbTerms size = do g <- getStdGen
                           let rands = drop d (randoms g :: [Float])
                             in print $ Data.Vector.take (2*size+3) (rMtO rands nbTerms size)
 
+testO' d nbTerms size = do g <- getStdGen
+                           let rands = drop d (randoms g :: [Float])
+                             in print $ (rMtO rands nbTerms size) ! (2*size+2)
+                            
 -- approximation
 withM :: [Double]
 withM = [fromIntegral(motzkin !! (n-1)) / fromIntegral(motzkin !! n)
