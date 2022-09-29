@@ -5,13 +5,13 @@ Programs are given in two languages
 # Motzkin
 Motzkin.hs is a Haskell program for linear random generation of Motzkin trees.
 
-Motzkin.py is a Python program  linear random generation of Motzkin trees (under development)
+Motzkin.py is a Python program for linear random generation of Motzkin trees (under development)
 # Remy
 Remy.hs is a Haskell program for Rémy's  algorithm
 
-Remy.py is a Python program  linear random generation of binary trees
+Remy.py is a Python program  linear for random generation of binary trees
 # Schröder
-Schröder.hs is a Haskell for linear random generation of Schröder trees.
+Schröder.hs is a Haskell for linear for random generation of Schröder trees.
 
 Schroeder.py is a Python program  linear random generation of Schröder trees.
 
