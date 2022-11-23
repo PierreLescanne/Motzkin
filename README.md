@@ -18,4 +18,4 @@ Schröder.hs is a Haskell for linear for random generation of Schröder trees.
 Schroeder.py is a Python program  linear random generation of Schröder trees.
 
 
-A paper describing these algorithms exists as a draft. It is called Hol_Lin_Gen.pdf
+A paper describing these algorithms exists on ArXiv. https://arxiv.org/abs/2205.11982
