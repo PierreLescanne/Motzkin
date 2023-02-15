@@ -1,3 +1,4 @@
+-- © Pierre Lescanne (ENS de Lyon)
 module Schroeder where
 import Data.Vector (Vector,(!),(//),take,replicate,toList)
 import Data.List 
