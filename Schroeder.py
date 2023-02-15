@@ -1,3 +1,4 @@
+# © Pierre Lescanne (ENS de Lyon)
 import random
 
 def rst(n):
