@@ -1,3 +1,4 @@
+# © Pierre Lescanne (ENS de Lyon)
 # =========================
 #   Non recursive,
 # with an explicit stack
