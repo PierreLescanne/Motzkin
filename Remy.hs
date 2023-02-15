@@ -1,3 +1,4 @@
+-- © Pierre Lescanne (ENS de Lyon)
 module Remy where
 
 import Data.Vector (Vector,(!),(//),take,replicate,fromList,toList)
