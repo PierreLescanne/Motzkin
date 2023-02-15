@@ -1,3 +1,4 @@
+-- © Pierre Lescanne (ENS de Lyon)
 module Motzkin where
 
 import PreMotzkin
