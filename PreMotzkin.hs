@@ -1,3 +1,4 @@
+-- © Pierre Lescanne (ENS de Lyon)
 module PreMotzkin where
 
 import Data.Vector (Vector,(!),(//),toList,take,replicate,fromList)
